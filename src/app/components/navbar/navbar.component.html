@@ -3,5 +3,12 @@
         <div class="logo"></div>
         <span>Enjoy My Work</span>
     </div>
-    <mat-slide-toggle class="target-block border border-primary"></mat-slide-toggle>
+    <div class="time-record-section">
+        <div class="paragraph">
+            Today you have worked for <span *ngIf="!durationFromStartTime">0 seconds</span>
+            <span >{{ durationFromStartTime }}</span>
+        </div>
+        <button *ngIf="!isWorking" (click)="clockIn()">Clock In</button>
+        <button *ngIf="isWorking" (click)="clockOut()">Clock Out</button>
+    </div>
 </nav>

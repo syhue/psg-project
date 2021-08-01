@@ -41,8 +41,6 @@ $psg-project-frontend-theme: mat.define-light-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
-@import '~ngx-popperjs/scss/theme-white';
-
 body {
     margin: 0;
 }
@@ -57,6 +55,7 @@ body {
 
 angular-popper {
     margin-right: 2rem;
+    margin-left: 1rem;
 }
 
 .angular-popper {

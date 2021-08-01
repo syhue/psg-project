@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -21,7 +22,8 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
         AppRoutingModule,
         MatTooltipModule,
         ComponentsModule,
-        RouterModule
+        RouterModule,
+        FormsModule 
     ],
     providers: [],
     bootstrap: [AppComponent]

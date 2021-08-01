@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 
 
@@ -10,7 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ],
     imports: [
         CommonModule,
-        MatSlideToggleModule
+        FormsModule,
     ],
     exports: [
         NavbarComponent,

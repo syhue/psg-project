@@ -31,3 +31,13 @@
         margin-right: 0.5rem;
     }
 }
+
+.time-record-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .paragraph {
+        margin-right: 1rem;
+    }
+}
