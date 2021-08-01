@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="home" *ngIf="quote">
+    <div class="quote-container" >
+        <span class="content">"{{ quote.content }}"</span>
+        <span class="author">- {{ quote.author }}</span>
+    </div>
+    <button (click)="getQuote()">New Quote</button>
+</div>

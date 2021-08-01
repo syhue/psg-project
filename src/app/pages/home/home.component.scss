@@ -1,0 +1,36 @@
+.quote-container {
+    background-color: #eed2b1;
+    width: fit-content;
+    height: fit-content;
+    max-width: 75%;
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.313rem;
+    margin-bottom: 1rem;
+
+    > span {
+        font-size: 2rem;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .author {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    
+}
+
+.home {
+    width: 100vw;
+    height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+}

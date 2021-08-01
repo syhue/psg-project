@@ -36,8 +36,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+}
 
-    .paragraph {
-        margin-right: 1rem;
-    }
+.paragraph {
+    margin-right: 1rem;
+}
+
+.user-section {
+    display: flex;
+    flex-direction: row;
 }

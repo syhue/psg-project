@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Quote } from '../../core/models/quote';
+import { QuoteService } from '../../core/services/quote.service';
 
 @Component({
     selector: 'app-home',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-    constructor() { }
+    quote!: Quote;
+
+    constructor(
+        private quoteService: QuoteService
+    ) { }
 
     ngOnInit(): void {
+        this.getQuote();
+    }
+
+    getQuote() {
+        return this.quoteService.getRandomQuote().then(q => this.quote = q);
     }
 
 }

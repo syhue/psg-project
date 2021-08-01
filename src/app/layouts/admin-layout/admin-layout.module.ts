@@ -7,7 +7,6 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 @NgModule({
     declarations: [
         HomeComponent,
-
     ],
     imports: [
         CommonModule,
