@@ -1,0 +1,33 @@
+.navbar {
+    background-color: #fefae0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    > span {
+        color: rgb(70, 114, 114);
+        font-size: 1rem;
+        font-weight: 650;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .logo {
+        width: 2.1rem;
+        height: 2.1rem;
+        background-image: url("/assets/icon-logo.png");
+        background-size: cover;
+        margin-bottom: 0.1rem;
+        margin-right: 0.5rem;
+    }
+}
