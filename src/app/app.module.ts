@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { MomentModule } from 'ngx-moment';
+
 
 @NgModule({
     declarations: [
@@ -21,7 +23,8 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
         ComponentsModule,
         RouterModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        MomentModule
     ],
     providers: [],
     bootstrap: [AppComponent]

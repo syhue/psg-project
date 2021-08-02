@@ -1,0 +1,64 @@
+<div class="records">
+    <mat-spinner *ngIf="!dataSource"></mat-spinner>
+
+    <div class="table-holder" *ngIf="dataSource">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="number">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let item; let i = index"> {{i+1}}. </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let item">
+                    <div>
+                        <span *ngIf="item.startTime">{{item.startTime | amDateFormat: 'DD MMMM YYYY'}}</span>
+                        <span *ngIf="!item.startTime">N/A</span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="startTime">
+                <th mat-header-cell *matHeaderCellDef> Start Time </th>
+                <td mat-cell *matCellDef="let item">
+                    <div>
+                        <span *ngIf="item.startTime">{{item.startTime | amDateFormat: 'hh:mm:ss A'}}</span>
+                        <span *ngIf="!item.startTime">N/A</span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="endTime">
+                <th mat-header-cell *matHeaderCellDef> End Time </th>
+                <td mat-cell *matCellDef="let item">
+                    <div>
+                        <span *ngIf="item.endTime">{{item.endTime | amDateFormat: 'hh:mm:ss A'}}</span>
+                        <span *ngIf="!item.endTime">N/A</span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="exactDuration">
+                <th mat-header-cell *matHeaderCellDef> Duration </th>
+                <td mat-cell *matCellDef="let item">
+                    <div>
+                        <span *ngIf="item.exactDuration">{{item.exactDuration}}</span>
+                        <span *ngIf="!item.exactDuration">N/A</span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

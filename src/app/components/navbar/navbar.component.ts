@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { TimeTrackerService } from '../../core/services/time-tracker.service';
 
 @Component({
     selector: 'app-navbar',
@@ -14,7 +15,9 @@ export class NavbarComponent implements OnInit {
     currentTime = moment().format('hh:mm:ss');
     durationFromStartTime!: string;
 
-    constructor() { }
+    constructor(
+        private timeTrackerService: TimeTrackerService
+    ) { }
 
     ngOnInit(): void {
     }
@@ -24,12 +27,20 @@ export class NavbarComponent implements OnInit {
         this.startTime = moment();
 
         setInterval(() => {
-            this.durationFromStartTime = this.startTime.fromNow().split(" ").filter(d => d !== 'ago').join(" ");
+            this.durationFromStartTime = this.startTime.fromNow(true).split(" ").filter(d => d !== 'ago').join(" ");
             if (!this.isWorking) clearInterval();
            }, 1000);
     }
 
     clockOut() {
+        this.endTime = moment();
         this.isWorking = false;
+
+        const data = {
+            startTime: this.startTime,
+            endTime: this.endTime,
+            duration: this.durationFromStartTime
+        }
+        this.timeTrackerService.createRecords(data).subscribe(d => console.log(d));
     }
 }
