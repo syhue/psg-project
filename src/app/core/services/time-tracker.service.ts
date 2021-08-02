@@ -11,7 +11,7 @@ import { TimeTrackerModel } from '../models/time-tracker/time-tracker.model';
 })
 export class TimeTrackerService {
 
-    route = environment.url + 'time-tracker';
+    route = environment.apiServer + 'time-tracker';
 
     constructor(
         private http: HttpClient

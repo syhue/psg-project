@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    url: 'https://app-dsg-project.herokuapp.com/'
+    apiServer: 'https://app-dsg-project.herokuapp.com/'
 };
 
 /*
