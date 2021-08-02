@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
     endTime!: moment.Moment;
     currentTime = moment().format('hh:mm:ss');
     durationFromStartTime!: string;
+    setInterval!: any;
 
     constructor(
         private timeTrackerService: TimeTrackerService
@@ -26,21 +27,25 @@ export class NavbarComponent implements OnInit {
         this.isWorking = true;
         this.startTime = moment();
 
-        setInterval(() => {
+        this.setInterval = setTimeout(() => {
             this.durationFromStartTime = this.startTime.fromNow(true).split(" ").filter(d => d !== 'ago').join(" ");
-            if (!this.isWorking) clearInterval();
-           }, 1000);
+            if(!this.isWorking) clearInterval(this.setInterval);
+        } , 1000);
     }
 
     clockOut() {
         this.endTime = moment();
-        this.isWorking = false;
-
+        
         const data = {
             startTime: this.startTime,
             endTime: this.endTime,
             duration: this.durationFromStartTime
         }
-        this.timeTrackerService.createRecords(data).subscribe(d => console.log(d));
+        this.timeTrackerService.createRecords(data).subscribe(
+            () => {
+                this.isWorking = false;
+                this.durationFromStartTime = "";
+                clearInterval(this.setInterval);
+            });
     }
 }

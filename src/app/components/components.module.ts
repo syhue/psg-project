@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { AdminLayoutRoutes } from '../layouts/admin-layout/admin-layout.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 
-
 @NgModule({
     declarations: [
         NavbarComponent,
@@ -13,7 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule.forChild(AdminLayoutRoutes)
+        RouterModule.forChild(AdminLayoutRoutes),
     ],
     exports: [
         NavbarComponent,
