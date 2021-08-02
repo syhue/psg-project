@@ -27,9 +27,8 @@ export class NavbarComponent implements OnInit {
         this.isWorking = true;
         this.startTime = moment();
 
-        this.setInterval = setTimeout(() => {
+        this.setInterval = setInterval(() => {
             this.durationFromStartTime = this.startTime.fromNow(true).split(" ").filter(d => d !== 'ago').join(" ");
-            if(!this.isWorking) clearInterval(this.setInterval);
         } , 1000);
     }
 
