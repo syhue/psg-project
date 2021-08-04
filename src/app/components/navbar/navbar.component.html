@@ -5,14 +5,16 @@
         <a class="menu" routerLink="../home">Home</a>
         <a class="menu" routerLink="../records">Records</a>
     </div>
-    <div class="time-record-section">
-        <div class="paragraph">
-            Today you have worked for <span *ngIf="!durationFromStartTime">0 seconds</span>
-            <span>{{ durationFromStartTime }}</span>
+    <block-ui>
+        <div class="time-record-section">
+            <div class="paragraph">
+                Today you have worked for <span *ngIf="!durationFromStartTime">0 seconds</span>
+                <span>{{ durationFromStartTime }}</span>
+            </div>
+            <button *ngIf="!isWorking" (click)="clockIn()">Clock In</button>
+            <button *ngIf="isWorking" (click)="clockOut()">Clock Out</button>
         </div>
-        <button *ngIf="!isWorking" (click)="clockIn()">Clock In</button>
-        <button *ngIf="isWorking" (click)="clockOut()">Clock Out</button>
-    </div>
+    </block-ui>
     <div class="user-section">
         <div class="paragraph">
             Welcome Back, Sook Yan </div>

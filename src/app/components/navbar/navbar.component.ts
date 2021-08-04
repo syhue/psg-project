@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TimeTrackerService } from '../../core/services/time-tracker.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class NavbarComponent implements OnInit {
     currentTime = moment().format('hh:mm:ss');
     durationFromStartTime!: string;
     setInterval!: any;
+    @BlockUI() blockUI!: NgBlockUI;
 
     constructor(
         private timeTrackerService: TimeTrackerService
@@ -26,10 +28,11 @@ export class NavbarComponent implements OnInit {
     clockIn() {
         this.isWorking = true;
         this.startTime = moment();
-
+        this.blockUI.start('Loading...');
         this.setInterval = setInterval(() => {
             this.durationFromStartTime = this.startTime.fromNow(true).split(" ").filter(d => d !== 'ago').join(" ");
         } , 1000);
+        this.blockUI.stop();
     }
 
     clockOut() {
@@ -40,11 +43,14 @@ export class NavbarComponent implements OnInit {
             endTime: this.endTime,
             duration: this.durationFromStartTime
         }
+
+        this.blockUI.start('Loading...');
         this.timeTrackerService.createRecords(data).subscribe(
             () => {
                 this.isWorking = false;
                 this.durationFromStartTime = "";
                 clearInterval(this.setInterval);
+                this.blockUI.stop();
             });
     }
 }

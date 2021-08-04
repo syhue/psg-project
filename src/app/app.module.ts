@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { MomentModule } from 'ngx-moment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
-import { MomentModule } from 'ngx-moment';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { MomentModule } from 'ngx-moment';
         RouterModule,
         FormsModule,
         HttpClientModule,
-        MomentModule
+        MomentModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
