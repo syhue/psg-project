@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { MomentModule } from 'ngx-moment';
@@ -25,7 +24,6 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
             }
         }),
         MatTableModule,
-        MatProgressSpinnerModule
     ],
     exports: [RouterModule],
     schemas: [

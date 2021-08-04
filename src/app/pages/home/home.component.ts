@@ -18,11 +18,11 @@ export class HomeComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.blockUI.start('Loading...');
         this.getQuote();
     }
 
     getQuote() {
+        this.blockUI.start('Loading...');
         return this.quoteService.getRandomQuote().then(q => {
             this.quote = q;
             this.blockUI.stop();
