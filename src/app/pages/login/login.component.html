@@ -3,16 +3,19 @@
         Enjoy My Work
     </div>
     <div class="section">
-        <div class="grid-container">
-            <div class="grid-item">Email:</div>
-            <div class="grid-item">
-                <input type="email">
+        <form>
+            <div class="grid-container">
+                <div class="grid-item">Email:</div>
+                <div class="grid-item">
+                    <input type="email" name="username" [(ngModel)]="username">
+                </div>
+                <div class="grid-item">Password:</div>
+                <div class="grid-item">
+                    <input type="password" name="password" [(ngModel)]="password">
+                </div>
             </div>
-            <div class="grid-item">Password:</div>
-            <div class="grid-item">
-                <input type="password">
-            </div>
-        </div>
-        <button routerLink="../home">Login</button>
+        </form>
+        <button (click)="login()">Login</button>
     </div>
+    <div class="error-msg">{{ errorMessage }}</div>
 </div>

@@ -39,6 +39,7 @@ $psg-project-frontend-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($psg-project-frontend-theme);
 
+
 /* You can add global styles to this file, and also import other style files */
 
 body {

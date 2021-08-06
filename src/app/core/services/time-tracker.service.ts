@@ -24,8 +24,9 @@ export class TimeTrackerService {
     }
 
 
-    getRecords(month?: number, year?: number):Observable<TimeTracker[]> {
+    getRecords(day?: number, month?: number, year?: number):Observable<TimeTracker[]> {
         const params: any = {
+            date: day? day+1 : '',
             month: month || "",
             year: year || ""
         }

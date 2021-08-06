@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { MomentModule } from 'ngx-moment';
@@ -19,6 +19,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
     ],
     imports: [
         BrowserModule,
+        ReactiveFormsModule,
         AppRoutingModule,
         ComponentsModule,
         RouterModule,

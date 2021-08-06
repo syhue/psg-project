@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../../pages/login/login.component';
 import { AuthLayoutRoutes } from './auth-layout.routing';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -10,6 +11,8 @@ import { RouterModule } from '@angular/router';
         LoginComponent
     ],
     imports: [
+        FormsModule,
+        ReactiveFormsModule,
         CommonModule,
         RouterModule.forChild(AuthLayoutRoutes),
     ],

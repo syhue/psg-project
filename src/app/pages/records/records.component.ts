@@ -11,6 +11,9 @@ import { TimeTrackerService } from '../../core/services/time-tracker.service';
 })
 export class RecordsComponent implements OnInit {
 
+    day!: number;
+    month!: number;
+    year!: number;
     records!: TimeTracker[];
     displayedColumns: string[] = ['number', 'date', 'startTime', 'endTime', 'exactDuration'];
     dataSource!: MatTableDataSource<TimeTracker>;
@@ -21,12 +24,12 @@ export class RecordsComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.blockUI.start('Loading...');
         this.getData();
     }
 
-    getData() {
-        this.timeTrackerService.getRecords().subscribe(data => {
+    getData(day?: number, month?: number, year?: number) {
+        this.blockUI.start('Loading...');
+        this.timeTrackerService.getRecords(day, month, year).subscribe(data => {
             this.dataSource = new MatTableDataSource(data);
             this.blockUI.stop();
         });

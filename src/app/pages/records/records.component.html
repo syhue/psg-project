@@ -1,4 +1,13 @@
 <div class="records">
+    Filter
+    <input type="number" name="day" [(ngModel)]="day" placeholder="Day">
+    <input type="number" name="month" [(ngModel)]="month" placeholder="Month">
+    <input type="number" name="year" [(ngModel)]="year" placeholder="Year">
+    <div class="d-flex flex-row">
+        <button (click)="getData(day, month, year)">Submit</button>
+        <button (click)="day=0;month=0;year=0;getData();">Clear</button>
+    </div>
+
     <div class="table-holder" *ngIf="dataSource">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
