@@ -11,13 +11,14 @@
                 Today you have worked for <span *ngIf="!durationFromStartTime">0 seconds</span>
                 <span>{{ durationFromStartTime }}</span>
             </div>
-            <button *ngIf="!isWorking" (click)="clockIn()">Clock In</button>
-            <button *ngIf="isWorking" (click)="clockOut()">Clock Out</button>
+            <button class="btn-clockIn" *ngIf="!isWorking" (click)="clockIn()">Clock In</button>
+            <button class="btn-clockOut" *ngIf="isWorking" (click)="clockOut()">Clock Out</button>
         </div>
     </block-ui>
     <div class="user-section">
         <div class="paragraph">
-            Welcome Back, Sook Yan </div>
-        <button routerLink="../login">Logout</button>
+            Welcome Back, Sook Yan
+        </div>
+        <button class="btn-logout" (click)="logout()">Logout</button>
     </div>
 </nav>

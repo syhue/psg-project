@@ -1,0 +1,44 @@
+button {
+  border: none;
+  outline: 0px;
+  min-width: 5.8rem;
+  padding: 0.3em;
+  font-size: 0.9rem;
+  font-weight: 450;
+  border-radius: 0.313rem;
+  box-shadow: 0.1rem 0.1rem 0.313rem 0.1rem grey;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:focus {
+    transform: translate(1px, 1px);
+    box-shadow: calc(0.1rem-1px) calc(0.1rem-1px) 0.313rem 0.1rem grey;
+  }
+}
+
+.btn-submit {
+  background-color: #544F6E;
+  color: whitesmoke;
+}
+
+.btn-cancel {
+  background-color: #e2e2e2;
+  color: #421c11;
+}
+
+.btn-clockIn {
+  background-color: #939062;
+  color: whitesmoke;
+}
+
+.btn-clockOut {
+  background-color: #faf9f6;
+  color: darkslategray;
+}
+
+.btn-logout {
+  background-color: #d9d8d3;
+  color: #363536;
+}

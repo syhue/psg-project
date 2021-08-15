@@ -40,13 +40,11 @@ $psg-project-frontend-theme: mat.define-light-theme(
 @include mat.all-component-themes($psg-project-frontend-theme);
 
 @import "~bootstrap/scss/bootstrap";
-
+@import "./app/core/styles/utilities.scss";
+@import "./app/core/styles/button.scss";
 
 /* You can add global styles to this file, and also import other style files */
 
-body {
-    margin: 0;
-}
 html,
 body {
     height: 100%;

@@ -68,4 +68,12 @@ export class NavbarComponent implements OnInit {
                 this.blockUI.close();
             });
     }
+
+    logout() {
+        if (this.isWorking) {
+            this.popupService.alert('Please clock out before logout.');
+            return;
+        }
+        this.router.navigate(['../login']);
+    }
 }

@@ -15,3 +15,32 @@ table {
     padding-top: 2rem;
     flex-direction: column;
 }
+
+.filter {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.6rem;
+    
+    > span {
+        font-family: sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        flex-basis: 8%;
+    }
+
+    > input[type="number"], > input:focus[type="number"], >input:focus:hover[type="number"] {
+        border: 1px solid #ccc;
+        border-radius: 0.313rem;
+        font-size: 1rem;
+        padding: 0.3em 0.5em;
+        outline: 0px;
+        width: 12%;
+        margin-right: 0.5rem;
+    }
+
+    button {
+        margin-right: 0.5rem;
+    }
+}
