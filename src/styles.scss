@@ -39,6 +39,8 @@ $psg-project-frontend-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($psg-project-frontend-theme);
 
+@import "~bootstrap/scss/bootstrap";
+
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -50,6 +52,7 @@ body {
     height: 100%;
 }
 body {
+    font-size: 12px;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
@@ -61,4 +64,9 @@ angular-popper {
 
 .angular-popper {
     width: 5rem !important;
+}
+
+.modal-content {
+    border-radius: 0.313rem;
+    background-color: transparent;
 }

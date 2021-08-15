@@ -5,10 +5,12 @@ import { RouterModule } from '@angular/router';
 import { BlockUIModule } from 'ng-block-ui';
 import { AdminLayoutRoutes } from '../layouts/admin-layout/admin-layout.routing';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
     declarations: [
         NavbarComponent,
+        PopupComponent
     ],
     imports: [
         CommonModule,
