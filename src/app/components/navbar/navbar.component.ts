@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { TimeTrackerService } from '../../core/services/time-tracker.service';
+import { PopupService } from '../popup/popup.service';
 
 @Component({
     selector: 'app-navbar',
@@ -19,10 +21,19 @@ export class NavbarComponent implements OnInit {
     @BlockUI() blockUI!: NgBlockUI;
 
     constructor(
-        private timeTrackerService: TimeTrackerService
+        private timeTrackerService: TimeTrackerService,
+        private router: Router,
+        private popupService: PopupService
     ) { }
 
     ngOnInit(): void {
+    }
+
+    reloadCurrentRoute() {
+        let currentUrl = this.router.url;
+        this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+            this.router.navigate([currentUrl]);
+        });
     }
 
     clockIn() {
@@ -50,7 +61,11 @@ export class NavbarComponent implements OnInit {
                 this.isWorking = false;
                 this.durationFromStartTime = "";
                 clearInterval(this.setInterval);
-                this.blockUI.stop();
+                this.reloadCurrentRoute();
+            },
+            err => {
+                if (err) this.popupService.alert(err.error.message);
+                this.blockUI.close();
             });
     }
 }
